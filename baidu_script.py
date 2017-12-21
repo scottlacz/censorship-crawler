@@ -3,7 +3,7 @@ This script will send a search query to Baidu and scrape the HTML looking for si
 Queries are generated based on random lines grabbed from a list of 4.5 million Wikipedia titles.
 
 
-SOURCES:
+CREDITS (Thanks for the help!):
 File with Wikipedia titles courtesy of this StackOverflow question:
 https://stackoverflow.com/questions/24474288/how-to-obtain-a-list-of-titles-of-all-wikipedia-articles
 
@@ -21,20 +21,6 @@ https://www.proxynova.com/proxy-server-list/country-cn/
 
 eventlet for timing out a request:
 https://stackoverflow.com/questions/21965484/timeout-for-python-requests-get-entire-response
-
-
-ISSUES AND FINDINGS:
-I can't find a reliable proxy server into China.
-Ideally, I would pull from a list of known available proxies on the web
-and use a different one upon completion of each request. 
-
-Because I can't reliably proxy into China, I can't actually set off the censors.
-Therefore, I don't know what HTML tags to look for in my request.
-The text would say (in Chinese):
-"In accordance with relevant laws, regulations, and policies, some search results could not be displayed"
-
-Censors are normally set off by Chinese words, making the use of English titles ineffective.
-To fix this, either translate the current title list or grab a list of Wikipedia titles in Chinese.
 """
 
 import requests, os, random, time, eventlet
